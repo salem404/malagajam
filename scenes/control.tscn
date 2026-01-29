@@ -1,0 +1,318 @@
+[gd_scene format=3 uid="uid://bk8n3iu0l3lk2"]
+
+[ext_resource type="Texture2D" uid="uid://cbfms21e4hnj2" path="res://assets/icon.svg" id="1_0fbet"]
+[ext_resource type="ButtonGroup" uid="uid://dw7821ghpatx7" path="res://resources/button_groups/cabeza.tres" id="1_brbbq"]
+[ext_resource type="Shader" uid="uid://bmrnjspjnxqab" path="res://shaders/wiggle.gdshader" id="1_lt2xq"]
+[ext_resource type="Texture2D" uid="uid://codpcidrfdnpo" path="res://assets/base.png" id="1_tjwpk"]
+[ext_resource type="Script" uid="uid://sw4qwwf46q6f" path="res://components/trozo_attach.gd" id="2_lpubu"]
+[ext_resource type="ButtonGroup" uid="uid://csj7tcrwgyth7" path="res://resources/button_groups/ojos.tres" id="3_brbbq"]
+[ext_resource type="Script" uid="uid://dqvyj80watjic" path="res://components/trozo_button.gd" id="4_lpubu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qtu10"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62e2m"]
+bg_color = Color(0.9384615, 0.36711675, 0.59112024, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1p5nq"]
+shader = ExtResource("1_lt2xq")
+shader_parameter/interval = 0.5
+shader_parameter/timeDelay = 0.0
+shader_parameter/intensityX = 1.0
+shader_parameter/intensityY = 5.0
+shader_parameter/seed = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ee4bf"]
+
+[node name="Control" type="VBoxContainer" unique_id=1630423358]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=967700404]
+visible = false
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qtu10")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=2110428160]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="Panel/HBoxContainer" unique_id=1907821397]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Salir"
+
+[node name="Button" type="Button" parent="Panel/HBoxContainer" unique_id=2142300241]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Ajustes"
+
+[node name="Control" type="Control" parent="." unique_id=2123502083]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Control" type="HBoxContainer" parent="Control" unique_id=1465322366]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="AspectRatioContainer" type="PanelContainer" parent="Control/Control" unique_id=1053869464]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_62e2m")
+
+[node name="Control" type="Control" parent="Control/Control/AspectRatioContainer" unique_id=1823585992]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/Control/AspectRatioContainer/Control" unique_id=477002135]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -53.0
+offset_top = 35.0
+offset_right = 53.0
+offset_bottom = 58.0
+grow_horizontal = 2
+text = "Una de queso porfa"
+
+[node name="Model" type="Node2D" parent="Control/Control/AspectRatioContainer/Control" unique_id=1802959183]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_1p5nq")
+position = Vector2(238, 263)
+
+[node name="Base" type="Sprite2D" parent="Control/Control/AspectRatioContainer/Control/Model" unique_id=4025297]
+use_parent_material = true
+texture = ExtResource("1_tjwpk")
+
+[node name="AttachCabeza" type="Sprite2D" parent="Control/Control/AspectRatioContainer/Control/Model" unique_id=406181218]
+use_parent_material = true
+script = ExtResource("2_lpubu")
+metadata/_custom_type_script = "uid://sw4qwwf46q6f"
+
+[node name="AttachOjos" type="Sprite2D" parent="Control/Control/AspectRatioContainer/Control/Model" unique_id=1295923019]
+use_parent_material = true
+script = ExtResource("2_lpubu")
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/Control" unique_id=1751635438]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ItemList" type="TabContainer" parent="Control/Control/PanelContainer" unique_id=55624008]
+layout_mode = 2
+current_tab = 1
+
+[node name="Cabeza" type="ScrollContainer" parent="Control/Control/PanelContainer/ItemList" unique_id=322783629]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/Control/PanelContainer/ItemList/Cabeza" unique_id=646515163]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="FlowContainer" type="FlowContainer" parent="Control/Control/PanelContainer/ItemList/Cabeza/MarginContainer" unique_id=683205552]
+layout_mode = 2
+theme_override_constants/h_separation = 35
+theme_override_constants/v_separation = 20
+alignment = 1
+last_wrap_alignment = 1
+
+[node name="Button3" type="Button" parent="Control/Control/PanelContainer/ItemList/Cabeza/MarginContainer/FlowContainer" unique_id=2139517769]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("3_brbbq")
+icon = ExtResource("1_0fbet")
+script = ExtResource("4_lpubu")
+trozo_id = 3
+metadata/_custom_type_script = "uid://dqvyj80watjic"
+
+[node name="Ojos" type="ScrollContainer" parent="Control/Control/PanelContainer/ItemList" unique_id=1994056443]
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/Control/PanelContainer/ItemList/Ojos" unique_id=107702921]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="FlowContainer" type="FlowContainer" parent="Control/Control/PanelContainer/ItemList/Ojos/MarginContainer" unique_id=1332401078]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 35
+theme_override_constants/v_separation = 20
+alignment = 1
+last_wrap_alignment = 1
+
+[node name="Button" type="Button" parent="Control/Control/PanelContainer/ItemList/Ojos/MarginContainer/FlowContainer" unique_id=657849849]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("1_brbbq")
+icon = ExtResource("1_0fbet")
+expand_icon = true
+script = ExtResource("4_lpubu")
+trozo_id = 1
+metadata/_custom_type_script = "uid://dqvyj80watjic"
+
+[node name="Button2" type="Button" parent="Control/Control/PanelContainer/ItemList/Ojos/MarginContainer/FlowContainer" unique_id=525267718]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("1_brbbq")
+icon = ExtResource("1_0fbet")
+expand_icon = true
+script = ExtResource("4_lpubu")
+trozo_id = 2
+metadata/_custom_type_script = "uid://dqvyj80watjic"
+
+[node name="Ejemplo" type="ScrollContainer" parent="Control/Control/PanelContainer/ItemList" unique_id=923641648]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/Control/PanelContainer/ItemList/Ejemplo" unique_id=209061309]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="FlowContainer" type="FlowContainer" parent="Control/Control/PanelContainer/ItemList/Ejemplo/MarginContainer" unique_id=193992845]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 35
+theme_override_constants/v_separation = 20
+alignment = 1
+last_wrap_alignment = 1
+
+[node name="Button" type="Button" parent="Control/Control/PanelContainer/ItemList/Ejemplo/MarginContainer/FlowContainer" unique_id=2126845935]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("3_brbbq")
+icon = ExtResource("1_0fbet")
+
+[node name="Button2" type="Button" parent="Control/Control/PanelContainer/ItemList/Ejemplo/MarginContainer/FlowContainer" unique_id=479770868]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("3_brbbq")
+icon = ExtResource("1_0fbet")
+
+[node name="Button3" type="Button" parent="Control/Control/PanelContainer/ItemList/Ejemplo/MarginContainer/FlowContainer" unique_id=250719926]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("3_brbbq")
+icon = ExtResource("1_0fbet")
+
+[node name="Button4" type="Button" parent="Control/Control/PanelContainer/ItemList/Ejemplo/MarginContainer/FlowContainer" unique_id=848894942]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("3_brbbq")
+icon = ExtResource("1_0fbet")
+
+[node name="Button5" type="Button" parent="Control/Control/PanelContainer/ItemList/Ejemplo/MarginContainer/FlowContainer" unique_id=2105283104]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("3_brbbq")
+icon = ExtResource("1_0fbet")
+
+[node name="Button6" type="Button" parent="Control/Control/PanelContainer/ItemList/Ejemplo/MarginContainer/FlowContainer" unique_id=771680045]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("3_brbbq")
+icon = ExtResource("1_0fbet")
+
+[node name="Button7" type="Button" parent="Control/Control/PanelContainer/ItemList/Ejemplo/MarginContainer/FlowContainer" unique_id=1181548643]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("3_brbbq")
+icon = ExtResource("1_0fbet")
+
+[node name="Button8" type="Button" parent="Control/Control/PanelContainer/ItemList/Ejemplo/MarginContainer/FlowContainer" unique_id=337880319]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("3_brbbq")
+icon = ExtResource("1_0fbet")
+
+[node name="Button9" type="Button" parent="Control/Control/PanelContainer/ItemList/Ejemplo/MarginContainer/FlowContainer" unique_id=1394009019]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("3_brbbq")
+icon = ExtResource("1_0fbet")
+
+[node name="Button10" type="Button" parent="Control/Control/PanelContainer/ItemList/Ejemplo/MarginContainer/FlowContainer" unique_id=2093884347]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("3_brbbq")
+icon = ExtResource("1_0fbet")
+
+[node name="Button11" type="Button" parent="Control/Control/PanelContainer/ItemList/Ejemplo/MarginContainer/FlowContainer" unique_id=1958030433]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("3_brbbq")
+icon = ExtResource("1_0fbet")
+
+[node name="Button12" type="Button" parent="Control/Control/PanelContainer/ItemList/Ejemplo/MarginContainer/FlowContainer" unique_id=867096950]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("3_brbbq")
+icon = ExtResource("1_0fbet")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1493944895]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ee4bf")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer" unique_id=1306029837]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/HBoxContainer3" unique_id=2103164927]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button2" type="Button" parent="PanelContainer/HBoxContainer3/HBoxContainer2" unique_id=2113994584]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Salir"
+
+[node name="Button" type="Button" parent="PanelContainer/HBoxContainer3/HBoxContainer2" unique_id=70433581]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Ajustes"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/HBoxContainer3" unique_id=1011271971]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="PanelContainer/HBoxContainer3/HBoxContainer" unique_id=521879404]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(1, 1, 1, 1)
+
+[node name="Button" type="Button" parent="PanelContainer/HBoxContainer3/HBoxContainer" unique_id=780538727]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "REady"

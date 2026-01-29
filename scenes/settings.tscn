@@ -1,0 +1,388 @@
+[gd_scene format=3 uid="uid://d3i3qli7l3int"]
+
+[ext_resource type="Script" uid="uid://dpdg6sac3k05b" path="res://scripts/settings/settings.gd" id="1_5p8wc"]
+[ext_resource type="Script" uid="uid://4e6xmtqokhe" path="res://scripts/settings/audio.gd" id="2_6wm04"]
+[ext_resource type="Script" uid="uid://3sbtjyqkk0bb" path="res://scripts/settings/language.gd" id="3_f4mfi"]
+
+[sub_resource type="Gradient" id="Gradient_f4mfi"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_es4n0"]
+gradient = SubResource("Gradient_f4mfi")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_manaa"]
+font_size = 20
+
+[node name="Settings" type="Control" unique_id=1520513264]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5p8wc")
+
+[node name="Panel" type="TextureRect" parent="." unique_id=953083373]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_es4n0")
+
+[node name="AjustesLabel" type="Label" parent="." unique_id=1992692996]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 133.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 90
+text = "ui_settings"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="MarginContainer" type="AspectRatioContainer" parent="." unique_id=193194671]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 161.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="MarginContainer" unique_id=88315357]
+layout_mode = 2
+tab_alignment = 1
+current_tab = 0
+
+[node name="Audio" type="AspectRatioContainer" parent="MarginContainer/TabContainer" unique_id=209815922]
+layout_mode = 2
+script = ExtResource("2_6wm04")
+metadata/_tab_index = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/TabContainer/Audio" unique_id=784630103]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 60
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/TabContainer/Audio/MarginContainer" unique_id=230728934]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = -5
+
+[node name="MasterBus" type="HBoxContainer" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer" unique_id=1467531544]
+layout_mode = 2
+alignment = 1
+
+[node name="AudioLabel" type="Label" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/MasterBus" unique_id=2045215775]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "Master"
+label_settings = SubResource("LabelSettings_manaa")
+uppercase = true
+
+[node name="MuteButton" type="Button" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/MasterBus" unique_id=96974095]
+layout_mode = 2
+size_flags_vertical = 4
+toggle_mode = true
+flat = true
+
+[node name="MinusButton" type="Button" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/MasterBus" unique_id=1872012474]
+self_modulate = Color(0.4494443, 0.33263102, 0.33299235, 1)
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+size_flags_vertical = 4
+flat = true
+icon_alignment = 1
+
+[node name="Slider" type="HSlider" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/MasterBus" unique_id=1465852907]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 4
+value = 50.0
+rounded = true
+scrollable = false
+tick_count = 5
+ticks_position = 3
+
+[node name="PlusButton" type="Button" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/MasterBus" unique_id=1258590039]
+self_modulate = Color(0.4494443, 0.33263102, 0.33299235, 1)
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+size_flags_vertical = 4
+flat = true
+icon_alignment = 1
+
+[node name="MusicBus" type="HBoxContainer" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer" unique_id=1442352085]
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="AudioLabel" type="Label" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/MusicBus" unique_id=1770462559]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "ui_music"
+label_settings = SubResource("LabelSettings_manaa")
+
+[node name="MuteButton" type="Button" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/MusicBus" unique_id=1423353466]
+layout_mode = 2
+size_flags_vertical = 4
+toggle_mode = true
+flat = true
+
+[node name="MinusButton" type="Button" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/MusicBus" unique_id=184422636]
+self_modulate = Color(0.4494443, 0.33263102, 0.33299235, 1)
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+size_flags_vertical = 4
+flat = true
+icon_alignment = 1
+
+[node name="Slider" type="HSlider" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/MusicBus" unique_id=1345817463]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 4
+value = 50.0
+rounded = true
+scrollable = false
+tick_count = 5
+ticks_position = 3
+
+[node name="PlusButton" type="Button" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/MusicBus" unique_id=173673676]
+self_modulate = Color(0.4494443, 0.33263102, 0.33299235, 1)
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+size_flags_vertical = 4
+flat = true
+icon_alignment = 1
+
+[node name="SFXBus" type="HBoxContainer" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer" unique_id=1082944078]
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="AudioLabel" type="Label" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/SFXBus" unique_id=1824252390]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "ui_sfx"
+label_settings = SubResource("LabelSettings_manaa")
+uppercase = true
+
+[node name="MuteButton" type="Button" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/SFXBus" unique_id=2009317297]
+layout_mode = 2
+size_flags_vertical = 4
+toggle_mode = true
+flat = true
+
+[node name="MinusButton" type="Button" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/SFXBus" unique_id=1800205062]
+self_modulate = Color(0.4494443, 0.33263102, 0.33299235, 1)
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+size_flags_vertical = 4
+flat = true
+icon_alignment = 1
+
+[node name="Slider" type="HSlider" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/SFXBus" unique_id=857752423]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 4
+value = 50.0
+rounded = true
+scrollable = false
+tick_count = 5
+ticks_position = 3
+
+[node name="PlusButton" type="Button" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/SFXBus" unique_id=213280109]
+self_modulate = Color(0.4494443, 0.33263102, 0.33299235, 1)
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+size_flags_vertical = 4
+flat = true
+icon_alignment = 1
+
+[node name="UIBus" type="HBoxContainer" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer" unique_id=1004756736]
+visible = false
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="AudioLabel" type="Label" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/UIBus" unique_id=985807096]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "ui_ui"
+label_settings = SubResource("LabelSettings_manaa")
+
+[node name="MuteButton" type="Button" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/UIBus" unique_id=751802448]
+layout_mode = 2
+size_flags_vertical = 4
+toggle_mode = true
+flat = true
+
+[node name="MinusButton" type="Button" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/UIBus" unique_id=1122376427]
+self_modulate = Color(0.4494443, 0.33263102, 0.33299235, 1)
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+size_flags_vertical = 4
+flat = true
+icon_alignment = 1
+
+[node name="Slider" type="HSlider" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/UIBus" unique_id=603525458]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 4
+value = 50.0
+rounded = true
+tick_count = 5
+ticks_position = 3
+
+[node name="PlusButton" type="Button" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/UIBus" unique_id=1564778386]
+self_modulate = Color(0.4494443, 0.33263102, 0.33299235, 1)
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+size_flags_vertical = 4
+flat = true
+icon_alignment = 1
+
+[node name="BugsBus" type="HBoxContainer" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer" unique_id=70728076]
+visible = false
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="AudioLabel" type="Label" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/BugsBus" unique_id=32949007]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "ui_bugs"
+label_settings = SubResource("LabelSettings_manaa")
+
+[node name="MuteButton" type="Button" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/BugsBus" unique_id=1889716838]
+layout_mode = 2
+size_flags_vertical = 4
+toggle_mode = true
+flat = true
+
+[node name="MinusButton" type="Button" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/BugsBus" unique_id=881414156]
+self_modulate = Color(0.4494443, 0.33263102, 0.33299235, 1)
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+size_flags_vertical = 4
+flat = true
+icon_alignment = 1
+
+[node name="Slider" type="HSlider" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/BugsBus" unique_id=699878947]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 4
+value = 50.0
+rounded = true
+tick_count = 5
+ticks_position = 3
+
+[node name="PlusButton" type="Button" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/BugsBus" unique_id=548226345]
+self_modulate = Color(0.4494443, 0.33263102, 0.33299235, 1)
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+size_flags_vertical = 4
+flat = true
+icon_alignment = 1
+
+[node name="AmbienteBus" type="HBoxContainer" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer" unique_id=422348516]
+visible = false
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="AudioLabel" type="Label" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/AmbienteBus" unique_id=1174682239]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "ui_ambiente"
+label_settings = SubResource("LabelSettings_manaa")
+
+[node name="MuteButton" type="Button" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/AmbienteBus" unique_id=1690311994]
+layout_mode = 2
+size_flags_vertical = 4
+toggle_mode = true
+flat = true
+
+[node name="MinusButton" type="Button" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/AmbienteBus" unique_id=1910043638]
+self_modulate = Color(0.4494443, 0.33263102, 0.33299235, 1)
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+size_flags_vertical = 4
+flat = true
+icon_alignment = 1
+
+[node name="Slider" type="HSlider" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/AmbienteBus" unique_id=1097558971]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 4
+value = 50.0
+rounded = true
+tick_count = 5
+ticks_position = 3
+
+[node name="PlusButton" type="Button" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/AmbienteBus" unique_id=922952464]
+self_modulate = Color(0.4494443, 0.33263102, 0.33299235, 1)
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+size_flags_vertical = 4
+flat = true
+icon_alignment = 1
+
+[node name="ResetButton" type="Button" parent="MarginContainer/TabContainer/Audio" unique_id=721753163]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 20
+text = "ui_reset"
+
+[node name="ui_language" type="AspectRatioContainer" parent="MarginContainer/TabContainer" unique_id=2035578903]
+visible = false
+layout_mode = 2
+script = ExtResource("3_f4mfi")
+metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/TabContainer/ui_language" unique_id=1785609963]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="OptionButton" type="OptionButton" parent="MarginContainer/TabContainer/ui_language/MarginContainer" unique_id=2068831088]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 35
+alignment = 1
+selected = 1
+item_count = 2
+popup/item_0/text = "English"
+popup/item_0/id = 0
+popup/item_1/text = "Español"
+popup/item_1/id = 1
+
+[node name="BoxContainer" type="BoxContainer" parent="." unique_id=1213242998]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+vertical = true
+
+[node name="CloseButton" type="Button" parent="BoxContainer" unique_id=1902366651]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "X"
+icon_alignment = 1
+
+[connection signal="pressed" from="MarginContainer/TabContainer/Audio/ResetButton" to="MarginContainer/TabContainer/Audio" method="_on_reset_button_pressed"]
+[connection signal="pressed" from="BoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
