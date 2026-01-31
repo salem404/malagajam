@@ -20,6 +20,8 @@ Este proyecto está licenciado bajo la licencia MIT - consulta el archivo [LICEN
 Este proyecto utiliza recursos de terceros cuyas licencias se pueden encontrar en los siguientes archivos y enlaces:
 
 - Godot Engine - [Licencia](https://godotengine.org/license)
+- Rainbow 2000 Font por GGBot.net- [Enlace](https://ggbot.itch.io/rainbow-2000-font)
+- YetAnotherIcons por Prinbles - [Enlace](https://prinbles.itch.io/yet-another-icons)
 
 ## Herramientas
 

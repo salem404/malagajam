@@ -32,6 +32,11 @@ window/size/viewport_height=540
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_height"
 
+[gui]
+
+theme/custom="uid://b6ji3rmwvgkvw"
+theme/custom_font="uid://b2sqo2okf1i7c"
+
 [internationalization]
 
 locale/translations=PackedStringArray("res://translations/ui_translations.en.translation", "res://translations/ui_translations.es.translation")

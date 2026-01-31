@@ -1,5 +1,7 @@
 key,es,en
 ui_settings,Ajustes,Settings
+ui_main_menu,Menú Principal,Main Menu
+ui_finish,Finalizar,Finish
 ui_music,Música,Music
 ui_sfx,Efectos,Effects
 ui_ui,Interfaz,Interface
@@ -18,3 +20,8 @@ ui_design,Diseño,Design
 ui_programming,Programación,Programming
 ui_art,Arte,Art
 ui_audio,Audio,Audio
+ui_head,Cabeza,Head
+ui_eyes,Ojos,Eyes
+ui_jaw,Mandíbula,Jaw
+ui_shape,Forma,Shape
+ui_texture,Textura,Texture
