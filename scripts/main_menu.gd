@@ -3,7 +3,6 @@ extends Control
 func _ready() -> void:
 	AudioManager.play_music("res://assets/audio/music/calm-inspired-150895.mp3")
 
-
 func _on_start_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/create.tscn")
 	AudioManager.stop_music()
