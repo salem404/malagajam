@@ -9,8 +9,7 @@
 [ext_resource type="Script" uid="uid://dqvyj80watjic" path="res://components/trozo_button.gd" id="7_snhkh"]
 [ext_resource type="ButtonGroup" uid="uid://dw7821ghpatx7" path="res://resources/button_groups/cabeza.tres" id="8_xcug1"]
 [ext_resource type="Script" uid="uid://dqe8kefwtf0y3" path="res://components/trozo_color_picker.gd" id="9_b0hbb"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qtu10"]
+[ext_resource type="PackedScene" uid="uid://d3i3qli7l3int" path="res://scenes/settings.tscn" id="10_toonf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62e2m"]
 bg_color = Color(0.9384615, 0.36711675, 0.59112024, 1)
@@ -33,27 +32,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_b0i6l")
 
-[node name="Panel" type="PanelContainer" parent="." unique_id=967700404]
-visible = false
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_qtu10")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=2110428160]
-layout_mode = 2
-
-[node name="Button2" type="Button" parent="Panel/HBoxContainer" unique_id=1907821397]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "Salir"
-
-[node name="Button" type="Button" parent="Panel/HBoxContainer" unique_id=2142300241]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "Ajustes"
-
 [node name="Control" type="Control" parent="." unique_id=2123502083]
 layout_mode = 2
 size_flags_vertical = 3
@@ -73,10 +51,10 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_62e2m")
 
-[node name="Control" type="Control" parent="Control/Control/AspectRatioContainer" unique_id=1823585992]
+[node name="Mask" type="Control" parent="Control/Control/AspectRatioContainer" unique_id=1823585992]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Control/Control/AspectRatioContainer/Control" unique_id=477002135]
+[node name="Label" type="Label" parent="Control/Control/AspectRatioContainer/Mask" unique_id=477002135]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -88,31 +66,31 @@ offset_bottom = 58.0
 grow_horizontal = 2
 text = "Una de queso porfa"
 
-[node name="Model" type="Node2D" parent="Control/Control/AspectRatioContainer/Control" unique_id=1802959183]
+[node name="Model" type="Node2D" parent="Control/Control/AspectRatioContainer/Mask" unique_id=1802959183]
 unique_name_in_owner = true
 material = SubResource("ShaderMaterial_1p5nq")
 position = Vector2(238, 263)
 
-[node name="Base" type="Sprite2D" parent="Control/Control/AspectRatioContainer/Control/Model" unique_id=4025297]
+[node name="Base" type="Sprite2D" parent="Control/Control/AspectRatioContainer/Mask/Model" unique_id=4025297]
 use_parent_material = true
 texture = ExtResource("3_toonf")
 
-[node name="AttachCabeza" type="Sprite2D" parent="Control/Control/AspectRatioContainer/Control/Model" unique_id=406181218]
+[node name="AttachExtras" type="Sprite2D" parent="Control/Control/AspectRatioContainer/Mask/Model" unique_id=48741904]
 use_parent_material = true
 script = ExtResource("4_hrf6i")
 metadata/_custom_type_script = "uid://sw4qwwf46q6f"
 
-[node name="AttachOjos" type="Sprite2D" parent="Control/Control/AspectRatioContainer/Control/Model" unique_id=610171694]
+[node name="AttachCabeza" type="Sprite2D" parent="Control/Control/AspectRatioContainer/Mask/Model" unique_id=406181218]
 use_parent_material = true
 script = ExtResource("4_hrf6i")
 metadata/_custom_type_script = "uid://sw4qwwf46q6f"
 
-[node name="AttachNariz" type="Sprite2D" parent="Control/Control/AspectRatioContainer/Control/Model" unique_id=2094301430]
+[node name="AttachOjos" type="Sprite2D" parent="Control/Control/AspectRatioContainer/Mask/Model" unique_id=610171694]
 use_parent_material = true
 script = ExtResource("4_hrf6i")
 metadata/_custom_type_script = "uid://sw4qwwf46q6f"
 
-[node name="AttachBoca" type="Sprite2D" parent="Control/Control/AspectRatioContainer/Control/Model" unique_id=48741904]
+[node name="AttachMandibula" type="Sprite2D" parent="Control/Control/AspectRatioContainer/Mask/Model" unique_id=2094301430]
 use_parent_material = true
 script = ExtResource("4_hrf6i")
 metadata/_custom_type_script = "uid://sw4qwwf46q6f"
@@ -123,12 +101,15 @@ size_flags_horizontal = 3
 
 [node name="ItemList" type="TabContainer" parent="Control/Control/PanelContainer" unique_id=55624008]
 layout_mode = 2
-current_tab = 1
+current_tab = 0
+tab_0/title = "ui_head"
+tab_1/title = "ui_eyes"
+tab_2/title = "ui_jaw"
 
 [node name="Cabeza" type="ScrollContainer" parent="Control/Control/PanelContainer/ItemList" unique_id=322783629]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 0
+metadata/_tab_name = "ui_head"
 
 [node name="MarginContainer" type="MarginContainer" parent="Control/Control/PanelContainer/ItemList/Cabeza" unique_id=646515163]
 layout_mode = 2
@@ -154,8 +135,10 @@ trozo_id = 3
 metadata/_custom_type_script = "uid://dqvyj80watjic"
 
 [node name="Ojos" type="ScrollContainer" parent="Control/Control/PanelContainer/ItemList" unique_id=1994056443]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
+metadata/_tab_name = "ui_eyes"
 
 [node name="MarginContainer" type="MarginContainer" parent="Control/Control/PanelContainer/ItemList/Ojos" unique_id=107702921]
 layout_mode = 2
@@ -195,19 +178,20 @@ script = ExtResource("7_snhkh")
 trozo_id = 2
 metadata/_custom_type_script = "uid://dqvyj80watjic"
 
-[node name="Ejemplo" type="ScrollContainer" parent="Control/Control/PanelContainer/ItemList" unique_id=923641648]
+[node name="Mandibula" type="ScrollContainer" parent="Control/Control/PanelContainer/ItemList" unique_id=1193719746]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 2
+metadata/_tab_name = "ui_jaw"
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/Control/PanelContainer/ItemList/Ejemplo" unique_id=209061309]
+[node name="MarginContainer" type="MarginContainer" parent="Control/Control/PanelContainer/ItemList/Mandibula" unique_id=1400085132]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/margin_top = 25
 theme_override_constants/margin_bottom = 25
 
-[node name="FlowContainer" type="FlowContainer" parent="Control/Control/PanelContainer/ItemList/Ejemplo/MarginContainer" unique_id=193992845]
+[node name="FlowContainer" type="FlowContainer" parent="Control/Control/PanelContainer/ItemList/Mandibula/MarginContainer" unique_id=1464156042]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -216,77 +200,26 @@ theme_override_constants/v_separation = 20
 alignment = 1
 last_wrap_alignment = 1
 
-[node name="Button" type="Button" parent="Control/Control/PanelContainer/ItemList/Ejemplo/MarginContainer/FlowContainer" unique_id=2126845935]
+[node name="Extras" type="ScrollContainer" parent="Control/Control/PanelContainer/ItemList" unique_id=515249951]
+visible = false
 layout_mode = 2
-toggle_mode = true
-button_group = ExtResource("5_jdoj7")
-icon = ExtResource("6_t7pq5")
+metadata/_tab_index = 3
 
-[node name="Button2" type="Button" parent="Control/Control/PanelContainer/ItemList/Ejemplo/MarginContainer/FlowContainer" unique_id=479770868]
+[node name="MarginContainer" type="MarginContainer" parent="Control/Control/PanelContainer/ItemList/Extras" unique_id=1960943464]
 layout_mode = 2
-toggle_mode = true
-button_group = ExtResource("5_jdoj7")
-icon = ExtResource("6_t7pq5")
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_bottom = 25
 
-[node name="Button3" type="Button" parent="Control/Control/PanelContainer/ItemList/Ejemplo/MarginContainer/FlowContainer" unique_id=250719926]
+[node name="FlowContainer" type="FlowContainer" parent="Control/Control/PanelContainer/ItemList/Extras/MarginContainer" unique_id=117666931]
 layout_mode = 2
-toggle_mode = true
-button_group = ExtResource("5_jdoj7")
-icon = ExtResource("6_t7pq5")
-
-[node name="Button4" type="Button" parent="Control/Control/PanelContainer/ItemList/Ejemplo/MarginContainer/FlowContainer" unique_id=848894942]
-layout_mode = 2
-toggle_mode = true
-button_group = ExtResource("5_jdoj7")
-icon = ExtResource("6_t7pq5")
-
-[node name="Button5" type="Button" parent="Control/Control/PanelContainer/ItemList/Ejemplo/MarginContainer/FlowContainer" unique_id=2105283104]
-layout_mode = 2
-toggle_mode = true
-button_group = ExtResource("5_jdoj7")
-icon = ExtResource("6_t7pq5")
-
-[node name="Button6" type="Button" parent="Control/Control/PanelContainer/ItemList/Ejemplo/MarginContainer/FlowContainer" unique_id=771680045]
-layout_mode = 2
-toggle_mode = true
-button_group = ExtResource("5_jdoj7")
-icon = ExtResource("6_t7pq5")
-
-[node name="Button7" type="Button" parent="Control/Control/PanelContainer/ItemList/Ejemplo/MarginContainer/FlowContainer" unique_id=1181548643]
-layout_mode = 2
-toggle_mode = true
-button_group = ExtResource("5_jdoj7")
-icon = ExtResource("6_t7pq5")
-
-[node name="Button8" type="Button" parent="Control/Control/PanelContainer/ItemList/Ejemplo/MarginContainer/FlowContainer" unique_id=337880319]
-layout_mode = 2
-toggle_mode = true
-button_group = ExtResource("5_jdoj7")
-icon = ExtResource("6_t7pq5")
-
-[node name="Button9" type="Button" parent="Control/Control/PanelContainer/ItemList/Ejemplo/MarginContainer/FlowContainer" unique_id=1394009019]
-layout_mode = 2
-toggle_mode = true
-button_group = ExtResource("5_jdoj7")
-icon = ExtResource("6_t7pq5")
-
-[node name="Button10" type="Button" parent="Control/Control/PanelContainer/ItemList/Ejemplo/MarginContainer/FlowContainer" unique_id=2093884347]
-layout_mode = 2
-toggle_mode = true
-button_group = ExtResource("5_jdoj7")
-icon = ExtResource("6_t7pq5")
-
-[node name="Button11" type="Button" parent="Control/Control/PanelContainer/ItemList/Ejemplo/MarginContainer/FlowContainer" unique_id=1958030433]
-layout_mode = 2
-toggle_mode = true
-button_group = ExtResource("5_jdoj7")
-icon = ExtResource("6_t7pq5")
-
-[node name="Button12" type="Button" parent="Control/Control/PanelContainer/ItemList/Ejemplo/MarginContainer/FlowContainer" unique_id=867096950]
-layout_mode = 2
-toggle_mode = true
-button_group = ExtResource("5_jdoj7")
-icon = ExtResource("6_t7pq5")
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 35
+theme_override_constants/v_separation = 20
+alignment = 1
+last_wrap_alignment = 1
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1493944895]
 custom_minimum_size = Vector2(0, 50)
@@ -301,25 +234,43 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Button2" type="Button" parent="PanelContainer/HBoxContainer3/HBoxContainer2" unique_id=2113994584]
+[node name="MenuButton" type="Button" parent="PanelContainer/HBoxContainer3/HBoxContainer2" unique_id=2113994584]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "Salir"
+text = "ui_main_menu"
 
-[node name="Button" type="Button" parent="PanelContainer/HBoxContainer3/HBoxContainer2" unique_id=70433581]
+[node name="SettingsButton" type="Button" parent="PanelContainer/HBoxContainer3/HBoxContainer2" unique_id=70433581]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "Ajustes"
+text = "ui_settings"
 
-[node name="ColorPickers" type="HBoxContainer" parent="PanelContainer/HBoxContainer3" unique_id=1011271971]
+[node name="NextButton" type="Button" parent="PanelContainer/HBoxContainer3" unique_id=780538727]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "ui_finish"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1636311401]
+
+[node name="ColorPickers" type="VBoxContainer" parent="CanvasLayer" unique_id=655954926]
 unique_name_in_owner = true
-layout_mode = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -86.0
+offset_right = 20.0
+offset_bottom = 86.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="cabeza" type="ColorPickerButton" parent="PanelContainer/HBoxContainer3/ColorPickers" unique_id=1610458723]
+[node name="cabeza" type="ColorPickerButton" parent="CanvasLayer/ColorPickers" unique_id=1610458723]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -328,7 +279,7 @@ color = Color(1, 1, 1, 1)
 script = ExtResource("9_b0hbb")
 metadata/_custom_type_script = "uid://dqe8kefwtf0y3"
 
-[node name="ojos" type="ColorPickerButton" parent="PanelContainer/HBoxContainer3/ColorPickers" unique_id=1168095431]
+[node name="ojos" type="ColorPickerButton" parent="CanvasLayer/ColorPickers" unique_id=1168095431]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -337,7 +288,7 @@ color = Color(1, 1, 1, 1)
 script = ExtResource("9_b0hbb")
 metadata/_custom_type_script = "uid://dqe8kefwtf0y3"
 
-[node name="nariz" type="ColorPickerButton" parent="PanelContainer/HBoxContainer3/ColorPickers" unique_id=1337083917]
+[node name="nariz" type="ColorPickerButton" parent="CanvasLayer/ColorPickers" unique_id=1337083917]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -346,7 +297,7 @@ color = Color(1, 1, 1, 1)
 script = ExtResource("9_b0hbb")
 metadata/_custom_type_script = "uid://dqe8kefwtf0y3"
 
-[node name="boca" type="ColorPickerButton" parent="PanelContainer/HBoxContainer3/ColorPickers" unique_id=767976752]
+[node name="boca" type="ColorPickerButton" parent="CanvasLayer/ColorPickers" unique_id=767976752]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -355,8 +306,9 @@ color = Color(1, 1, 1, 1)
 script = ExtResource("9_b0hbb")
 metadata/_custom_type_script = "uid://dqe8kefwtf0y3"
 
-[node name="Button" type="Button" parent="PanelContainer/HBoxContainer3" unique_id=780538727]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "REady"
+[node name="Settings" parent="CanvasLayer" unique_id=1520513264 instance=ExtResource("10_toonf")]
+unique_name_in_owner = true
+visible = false
+
+[connection signal="pressed" from="PanelContainer/HBoxContainer3/HBoxContainer2/MenuButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer3/HBoxContainer2/SettingsButton" to="." method="_on_settings_button_pressed"]

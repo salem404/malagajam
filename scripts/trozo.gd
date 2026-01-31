@@ -7,21 +7,21 @@ extends Resource
 @export var preset_color: Color
 
 
-
 const CATEGORIES := [
 	"cabeza",
 	"ojos",
-	"nariz",
-	"boca",
+	"mandibula",
+    "extra"
 ]
 
 const ATRIBUTOS_POSIBLES := [
 	"cuqui",
-	"macabro"
+	"macabro",
+    "futurista"
 ]
 
 
-func _init(p_id: int, p_category: String = "", p_atributos: Dictionary = {},p_color: Color = Color("#FFFFFF")):
+func _init(p_id: int, p_category: String = "", p_atributos: Dictionary = {}, p_color: Color = Color("#FFFFFF")):
 	id = p_id
 	category = p_category
 	atributos = p_atributos
