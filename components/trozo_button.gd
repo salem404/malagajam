@@ -2,17 +2,23 @@ class_name TrozoButton
 extends Button
 
 @export var trozo_id: int
-@onready var trozo: Trozo = TrozosRegistry.get_trozo(trozo_id)
+@onready var trozo_category: String = get_parent().name.to_lower()
+@onready var button_theme := load("res://theme/trozo_button_theme.tres")
+
+@onready var trozo: Trozo = TrozosRegistry.get_trozo(trozo_id, trozo_category)
 
 const ICON_SIZE := 180
 
 func _ready():
 	if trozo == null:
-		push_warning("Trozo no encontrado para id: %d" % trozo_id)
+		push_warning("Trozo no encontrado para id: %d y categoria: %s" % [trozo_id, trozo_category])
+		visible = false
 		return
 
 	toggle_mode = true
 	expand_icon = true
+	icon_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	set_theme(button_theme)
 	custom_minimum_size = Vector2(ICON_SIZE, ICON_SIZE)
 	button_group = load(
 		"res://resources/button_groups/%s.tres" %
