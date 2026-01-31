@@ -1,11 +1,6 @@
 extends Node
 
 var trozos_registry := {
-	"enmascarade_texture": Trozo.new(
-		1,
-		"texture",
-		{"futurista": 0.5,"cuqui":0.5},
-		),
 	"enmascarade_shape": Trozo.new(
 		1,
 		"shape",
@@ -71,7 +66,6 @@ var trozos_registry := {
 
 func get_trozo(id: int,category: String) -> Trozo:
 	for trozo in trozos_registry.values():
-		print(trozo.id,trozo.category)
 		if trozo.id == id and trozo.category == category:
 			
 			return trozo

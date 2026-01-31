@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://o2g17d3pblxp"
-path="res://.godot/imported/Rainbow2000-Italic.ttf-979ee6e5226d9d7f8d17ba3da87a206d.fontdata"
+uid="uid://dq40upi2tepfc"
+path="res://.godot/imported/friendlyscribbles.ttf-4f15ed90ce5037cdf2102fe41a5fa419.fontdata"
 
 [deps]
 
-source_file="res://theme/Rainbow2000_Font_v1_04/TrueType (.ttf)/Rainbow2000-Italic.ttf"
-dest_files=["res://.godot/imported/Rainbow2000-Italic.ttf-979ee6e5226d9d7f8d17ba3da87a206d.fontdata"]
+source_file="res://assets/fonts/friendlyscribbles/friendlyscribbles.ttf"
+dest_files=["res://.godot/imported/friendlyscribbles.ttf-4f15ed90ce5037cdf2102fe41a5fa419.fontdata"]
 
 [params]
 

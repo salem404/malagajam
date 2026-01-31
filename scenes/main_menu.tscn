@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cew475l5yqp6e"]
 
 [ext_resource type="Script" uid="uid://cx6oru1mgwafe" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="FontFile" uid="uid://dmj3ty36b6e5c" path="res://assets/fonts/Rainbow2000_Font_v1_04/Rainbow2000-Bold.ttf" id="2_ekxnf"]
 
 [sub_resource type="Gradient" id="Gradient_f4mfi"]
 offsets = PackedFloat32Array(0, 0.9826087)
@@ -34,14 +35,19 @@ texture = SubResource("GradientTexture2D_vue75")
 
 [node name="Titulo" type="Label" parent="." unique_id=1762277896]
 layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -312.0
+offset_right = 311.5
 offset_bottom = 394.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_ekxnf")
 theme_override_font_sizes/font_size = 100
-text = "Titulo"
+text = "ArtMask Gadir"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="MarginContainer" type="AspectRatioContainer" parent="." unique_id=171809941]
 layout_mode = 1

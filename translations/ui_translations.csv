@@ -10,10 +10,12 @@ ui_language,Idioma,Language
 ui_start,Iniciar,Start
 ui_pause,Pausa,Pause
 ui_resume,Reanudar,Resume
+ui_restart,Reiniciar,Restart
 ui_quit,Salir,Quit
 ui_quit_alert,Se perderá el progreso,All progress will be lost
 ui_yes,Sí,Yes
 ui_no,No,No
+ui_next,Siguiente,Next
 ui_credits,Créditos,Credits
 ui_production,Producción,Production
 ui_design,Diseño,Design

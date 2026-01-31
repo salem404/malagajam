@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://b2sqo2okf1i7c"
-path="res://.godot/imported/Rainbow2000-Bold.ttf-db18a3932163032123c642130e83c1f2.fontdata"
+uid="uid://dmj3ty36b6e5c"
+path="res://.godot/imported/Rainbow2000-Bold.ttf-238577cff6dc8220ade4c8dd4447bea1.fontdata"
 
 [deps]
 
-source_file="res://theme/Rainbow2000_Font_v1_04/TrueType (.ttf)/Rainbow2000-Bold.ttf"
-dest_files=["res://.godot/imported/Rainbow2000-Bold.ttf-db18a3932163032123c642130e83c1f2.fontdata"]
+source_file="res://assets/fonts/Rainbow2000_Font_v1_04/Rainbow2000-Bold.ttf"
+dest_files=["res://.godot/imported/Rainbow2000-Bold.ttf-238577cff6dc8220ade4c8dd4447bea1.fontdata"]
 
 [params]
 
