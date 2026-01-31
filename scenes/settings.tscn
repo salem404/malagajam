@@ -2,7 +2,12 @@
 
 [ext_resource type="Script" uid="uid://dpdg6sac3k05b" path="res://scripts/settings/settings.gd" id="1_5p8wc"]
 [ext_resource type="Script" uid="uid://4e6xmtqokhe" path="res://scripts/settings/audio.gd" id="2_6wm04"]
+[ext_resource type="Texture2D" uid="uid://dnh5endgaq1hi" path="res://assets/Prinbles_YetAnotherIcons (beta) (9_7_2023)/svg/White-Icon/TalkBubble.svg" id="2_gis3k"]
+[ext_resource type="Texture2D" uid="uid://djsjvj0sym2g5" path="res://assets/Prinbles_YetAnotherIcons (beta) (9_7_2023)/svg/White-Icon/Music-On.svg" id="2_gjs24"]
+[ext_resource type="Texture2D" uid="uid://d1d6soynr17p3" path="res://assets/Prinbles_YetAnotherIcons (beta) (9_7_2023)/svg/White-Icon/MediumArrow-Left.svg" id="3_es4n0"]
 [ext_resource type="Script" uid="uid://3sbtjyqkk0bb" path="res://scripts/settings/language.gd" id="3_f4mfi"]
+[ext_resource type="Texture2D" uid="uid://dmgjoirpvdn5r" path="res://assets/Prinbles_YetAnotherIcons (beta) (9_7_2023)/svg/White-Icon/MediumArrow-Right.svg" id="4_gis3k"]
+[ext_resource type="Texture2D" uid="uid://cww7e2vwy154t" path="res://assets/Prinbles_YetAnotherIcons (beta) (9_7_2023)/svg/White-Icon/Repeat-Right.svg" id="7_am25x"]
 
 [sub_resource type="Gradient" id="Gradient_f4mfi"]
 
@@ -56,6 +61,8 @@ grow_vertical = 2
 layout_mode = 2
 tab_alignment = 1
 current_tab = 0
+tab_0/icon = ExtResource("2_gjs24")
+tab_1/icon = ExtResource("2_gis3k")
 
 [node name="Audio" type="AspectRatioContainer" parent="MarginContainer/TabContainer" unique_id=209815922]
 layout_mode = 2
@@ -92,10 +99,10 @@ toggle_mode = true
 flat = true
 
 [node name="MinusButton" type="Button" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/MasterBus" unique_id=1872012474]
-self_modulate = Color(0.4494443, 0.33263102, 0.33299235, 1)
 custom_minimum_size = Vector2(35, 35)
 layout_mode = 2
 size_flags_vertical = 4
+icon = ExtResource("3_es4n0")
 flat = true
 icon_alignment = 1
 
@@ -110,10 +117,10 @@ tick_count = 5
 ticks_position = 3
 
 [node name="PlusButton" type="Button" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/MasterBus" unique_id=1258590039]
-self_modulate = Color(0.4494443, 0.33263102, 0.33299235, 1)
 custom_minimum_size = Vector2(35, 35)
 layout_mode = 2
 size_flags_vertical = 4
+icon = ExtResource("4_gis3k")
 flat = true
 icon_alignment = 1
 
@@ -135,10 +142,10 @@ toggle_mode = true
 flat = true
 
 [node name="MinusButton" type="Button" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/MusicBus" unique_id=184422636]
-self_modulate = Color(0.4494443, 0.33263102, 0.33299235, 1)
 custom_minimum_size = Vector2(35, 35)
 layout_mode = 2
 size_flags_vertical = 4
+icon = ExtResource("3_es4n0")
 flat = true
 icon_alignment = 1
 
@@ -153,10 +160,10 @@ tick_count = 5
 ticks_position = 3
 
 [node name="PlusButton" type="Button" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/MusicBus" unique_id=173673676]
-self_modulate = Color(0.4494443, 0.33263102, 0.33299235, 1)
 custom_minimum_size = Vector2(35, 35)
 layout_mode = 2
 size_flags_vertical = 4
+icon = ExtResource("4_gis3k")
 flat = true
 icon_alignment = 1
 
@@ -179,10 +186,10 @@ toggle_mode = true
 flat = true
 
 [node name="MinusButton" type="Button" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/SFXBus" unique_id=1800205062]
-self_modulate = Color(0.4494443, 0.33263102, 0.33299235, 1)
 custom_minimum_size = Vector2(35, 35)
 layout_mode = 2
 size_flags_vertical = 4
+icon = ExtResource("3_es4n0")
 flat = true
 icon_alignment = 1
 
@@ -197,10 +204,10 @@ tick_count = 5
 ticks_position = 3
 
 [node name="PlusButton" type="Button" parent="MarginContainer/TabContainer/Audio/MarginContainer/VBoxContainer/SFXBus" unique_id=213280109]
-self_modulate = Color(0.4494443, 0.33263102, 0.33299235, 1)
 custom_minimum_size = Vector2(35, 35)
 layout_mode = 2
 size_flags_vertical = 4
+icon = ExtResource("4_gis3k")
 flat = true
 icon_alignment = 1
 
@@ -340,6 +347,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 theme_override_font_sizes/font_size = 20
 text = "ui_reset"
+icon = ExtResource("7_am25x")
 
 [node name="ui_language" type="AspectRatioContainer" parent="MarginContainer/TabContainer" unique_id=2035578903]
 visible = false

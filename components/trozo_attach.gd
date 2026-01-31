@@ -9,7 +9,7 @@ var _color_picker: TrozoColorPicker
 
 func _ready():
 	if trozo_id > 0:
-		trozo = TrozosRegistry.get_trozo(trozo_id)
+		trozo = TrozosRegistry.get_trozo(trozo_id, category)
 	else:
 		trozo = null
 

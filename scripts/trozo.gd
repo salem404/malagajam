@@ -8,6 +8,7 @@ extends Resource
 
 
 const CATEGORIES := [
+	"shape",
 	"cabeza",
 	"ojos",
 	"mandibula",

@@ -98,13 +98,13 @@ func _update_mute_button_icon(bus_name: String) -> void:
 
 	var icon_path: String
 	if value == 0:
-		icon_path = "res://assets/ui/lucid/vol0.png"
+		icon_path = "res://assets/Prinbles_YetAnotherIcons (beta) (9_7_2023)/svg/White-Icon/Sound-None.svg"
 	elif value <= 33.33:
-		icon_path = "res://assets/ui/lucid/vol1.png"
+		icon_path = "res://assets/Prinbles_YetAnotherIcons (beta) (9_7_2023)/svg/White-Icon/Sound-One.svg"
 	elif value <= 66.66:
-		icon_path = "res://assets/ui/lucid/vol2.png"
+		icon_path = "res://assets/Prinbles_YetAnotherIcons (beta) (9_7_2023)/svg/White-Icon/Sound-Two.svg"
 	else:
-		icon_path = "res://assets/ui/lucid/vol3.png"
+		icon_path = "res://assets/Prinbles_YetAnotherIcons (beta) (9_7_2023)/svg/White-Icon/Sound-Three.svg"
 
 	mute_button.icon = load(icon_path)
 
