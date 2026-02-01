@@ -5,17 +5,17 @@ extends VBoxContainer
 @onready var petitions_manager = PetitionsManager.new()
 
 @export var game_status := "Petition"
+var current_petition: Array
 
 func _ready() -> void:
 	settings_scene.hide()
-	var current_petition :Array = petitions_manager.generate_petition()
+	current_petition = petitions_manager.generate_petition()
 	%PetitionScreen.show()
 	show_petition(current_petition)
 	%ResultScreen.hide()
 	%NextButton.text = tr("ui_next")
 	poblate_containers()
 	AudioManager.play_music("res://assets/audio/music/before-beach-surf-rock-background-track-153586.mp3")
-	petitions_manager.generate_petition()
 
 
 func _on_settings_button_pressed() -> void:
@@ -35,8 +35,18 @@ func poblate_containers() -> void:
 			category_container.add_child(trozo_button)
 			trozo_button.pressed.connect(AudioManager.play_button_sound)
 
-func show_petition(petition)-> void:
-	%PetitionScreen/Label.text = str(petition)
+func show_petition(petition: Array, target_node: Node = null) -> void:
+	if target_node == null:
+		target_node = %PetitionScreen
+	
+	var petition_container = target_node.get_node_or_null("petition")
+	if petition_container == null:
+		return
+	
+	for i in petition.size():
+		var petition_texture = "res://assets/%s.png" % petition[i].capitalize()
+		petition_container.get_node("cat_slot%d" % (i + 1)).texture = load(petition_texture)
+
 
 func _on_next_button_pressed() -> void:
 	if game_status == "Petition":
@@ -49,7 +59,7 @@ func _on_next_button_pressed() -> void:
 func change_to_create_mode() -> void:
 	game_status = "Create"
 	%PetitionScreen.hide()
-
+	show_petition(petitions_manager.current_petition, %Control.get_node("Preview/AspectRatioContainer/Mask"))
 	%NextButton.text = tr("ui_finish")
 
 func change_to_result_mode() -> void:
@@ -63,7 +73,7 @@ func reset_game() -> void:
 	var current_petition :Array = petitions_manager.generate_petition()
 	%ResultScreen.hide()
 	%PetitionScreen.show()
-	show_petition(current_petition)
+	show_petition(current_petition, %PetitionScreen)
 	%NextButton.text = tr("ui_next")
 	%ColorPickers.show()
 	# Reset all trozo attachments
