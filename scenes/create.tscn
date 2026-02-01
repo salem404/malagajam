@@ -4,6 +4,10 @@
 [ext_resource type="Shader" uid="uid://bmrnjspjnxqab" path="res://shaders/wiggle.gdshader" id="2_b0hbb"]
 [ext_resource type="Script" uid="uid://sw4qwwf46q6f" path="res://components/trozo_attach.gd" id="4_hrf6i"]
 [ext_resource type="Texture2D" uid="uid://bov6s5346kxer" path="res://assets/trozos/shape/1.png" id="4_snhkh"]
+[ext_resource type="Texture2D" uid="uid://bunkn6xv4ne5u" path="res://assets/ui/Icon.png" id="5_t7pq5"]
+[ext_resource type="Texture2D" uid="uid://blc8wmkwlmf6j" path="res://assets/ui/Icon2.png" id="6_snhkh"]
+[ext_resource type="Texture2D" uid="uid://b6odjhp50yp1m" path="res://assets/ui/Icon3.png" id="7_xcug1"]
+[ext_resource type="Texture2D" uid="uid://x13x8bs2xevy" path="res://assets/ui/Icon4.png" id="8_qe2hf"]
 [ext_resource type="Script" uid="uid://dqe8kefwtf0y3" path="res://components/trozo_color_picker.gd" id="9_b0hbb"]
 [ext_resource type="Texture2D" uid="uid://kxhqvxriq87v" path="res://assets/Prinbles_YetAnotherIcons (beta) (9_7_2023)/svg/White-Icon/Home.svg" id="9_t7pq5"]
 [ext_resource type="Texture2D" uid="uid://bfghv7pbbdk6d" path="res://assets/Cuqui.png" id="9_toonf"]
@@ -12,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dnmsyg6ytdisu" path="res://assets/Prinbles_YetAnotherIcons (beta) (9_7_2023)/svg/White-Icon/Tick.svg" id="11_xcug1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62e2m"]
-bg_color = Color(0.9384615, 0.36711675, 0.59112024, 1)
+bg_color = Color(0.9388298, 0.67120755, 0.4815184, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t7pq5"]
 shader = ExtResource("2_b0hbb")
@@ -22,7 +26,30 @@ shader_parameter/intensityX = 0.0
 shader_parameter/intensityY = 2.0
 shader_parameter/seed = 2002.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xcug1"]
+shader = ExtResource("2_b0hbb")
+shader_parameter/interval = 0.5
+shader_parameter/timeDelay = 0.0
+shader_parameter/intensityX = 2.0
+shader_parameter/intensityY = 6.0
+shader_parameter/seed = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b0hbb"]
+bg_color = Color(0.74509805, 0.3647059, 0.7882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_toonf"]
+bg_color = Color(0.83244205, 0.519163, 0.86619705, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ee4bf"]
+bg_color = Color(0.7436546, 0.38700503, 0.6424372, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_snhkh"]
+shader = ExtResource("2_b0hbb")
+shader_parameter/interval = 0.5
+shader_parameter/timeDelay = 0.0
+shader_parameter/intensityX = 2.0
+shader_parameter/intensityY = 2.0
+shader_parameter/seed = 50.0
 
 [node name="Create" type="VBoxContainer" unique_id=1630423358]
 anchors_preset = 15
@@ -58,7 +85,7 @@ layout_mode = 2
 [node name="Model" type="Node2D" parent="Control/Preview/AspectRatioContainer/Mask" unique_id=1802959183]
 unique_name_in_owner = true
 material = SubResource("ShaderMaterial_t7pq5")
-position = Vector2(238, 263)
+position = Vector2(238, 289)
 
 [node name="AttachShape" type="Sprite2D" parent="Control/Preview/AspectRatioContainer/Mask/Model" unique_id=1159260493]
 use_parent_material = true
@@ -93,16 +120,19 @@ offset_bottom = 79.0
 alignment = 1
 
 [node name="cat_slot1" type="TextureRect" parent="Control/Preview/AspectRatioContainer/Mask/petition" unique_id=983862236]
+material = SubResource("ShaderMaterial_xcug1")
 layout_mode = 2
 texture = ExtResource("9_toonf")
 expand_mode = 2
 
 [node name="cat_slot2" type="TextureRect" parent="Control/Preview/AspectRatioContainer/Mask/petition" unique_id=858545972]
+material = SubResource("ShaderMaterial_xcug1")
 layout_mode = 2
 texture = ExtResource("9_toonf")
 expand_mode = 2
 
 [node name="cat_slot3" type="TextureRect" parent="Control/Preview/AspectRatioContainer/Mask/petition" unique_id=1499569591]
+material = SubResource("ShaderMaterial_xcug1")
 layout_mode = 2
 texture = ExtResource("9_toonf")
 expand_mode = 2
@@ -110,15 +140,21 @@ expand_mode = 2
 [node name="Customize" type="PanelContainer" parent="Control/Preview" unique_id=1751635438]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_b0hbb")
 
 [node name="ItemList" type="TabContainer" parent="Control/Preview/Customize" unique_id=55624008]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_toonf")
 current_tab = 0
 tab_0/title = "ui_shape"
+tab_0/icon = ExtResource("5_t7pq5")
 tab_1/title = "ui_head"
+tab_1/icon = ExtResource("6_snhkh")
 tab_2/title = "ui_eyes"
+tab_2/icon = ExtResource("7_xcug1")
 tab_3/title = "ui_jaw"
+tab_3/icon = ExtResource("8_qe2hf")
 tab_4/disabled = true
 tab_4/hidden = true
 
@@ -280,42 +316,78 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="shape" type="ColorPickerButton" parent="CanvasLayer/ColorPickers" unique_id=1663139051]
+clip_children = 2
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
+icon = ExtResource("5_t7pq5")
 color = Color(1, 1, 1, 1)
 edit_alpha = false
 script = ExtResource("9_b0hbb")
 metadata/_custom_type_script = "uid://dqe8kefwtf0y3"
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ColorPickers/shape" unique_id=1430484287]
+self_modulate = Color(0.83137256, 0.5176471, 0.8666667, 1)
+position = Vector2(-17, 0)
+scale = Vector2(0.59375, 0.59375)
+texture = ExtResource("5_t7pq5")
+centered = false
 
 [node name="cabeza" type="ColorPickerButton" parent="CanvasLayer/ColorPickers" unique_id=1610458723]
+clip_children = 2
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+icon = ExtResource("6_snhkh")
 color = Color(1, 1, 1, 1)
 edit_alpha = false
 script = ExtResource("9_b0hbb")
 metadata/_custom_type_script = "uid://dqe8kefwtf0y3"
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/ColorPickers/cabeza" unique_id=2006403303]
+self_modulate = Color(0.83137256, 0.5176471, 0.8666667, 1)
+position = Vector2(-15.9999695, 1.0000153)
+scale = Vector2(0.59375, 0.59375)
+texture = ExtResource("6_snhkh")
+centered = false
 
 [node name="ojos" type="ColorPickerButton" parent="CanvasLayer/ColorPickers" unique_id=1168095431]
+clip_children = 2
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+icon = ExtResource("7_xcug1")
 color = Color(1, 1, 1, 1)
 edit_alpha = false
 script = ExtResource("9_b0hbb")
 metadata/_custom_type_script = "uid://dqe8kefwtf0y3"
 
+[node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer/ColorPickers/ojos" unique_id=124986292]
+self_modulate = Color(0.83137256, 0.5176471, 0.8666667, 1)
+position = Vector2(-15.9999695, 1)
+scale = Vector2(0.59375, 0.59375)
+texture = ExtResource("7_xcug1")
+centered = false
+
 [node name="mandibula" type="ColorPickerButton" parent="CanvasLayer/ColorPickers" unique_id=1337083917]
+clip_children = 2
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+icon = ExtResource("8_qe2hf")
 color = Color(1, 1, 1, 1)
 edit_alpha = false
 script = ExtResource("9_b0hbb")
 metadata/_custom_type_script = "uid://dqe8kefwtf0y3"
+
+[node name="Sprite2D4" type="Sprite2D" parent="CanvasLayer/ColorPickers/mandibula" unique_id=139495277]
+self_modulate = Color(0.83137256, 0.5176471, 0.8666667, 1)
+position = Vector2(-15.9999695, 1)
+scale = Vector2(0.59375, 0.59375)
+texture = ExtResource("8_qe2hf")
+centered = false
 
 [node name="extras" type="ColorPickerButton" parent="CanvasLayer/ColorPickers" unique_id=767976752]
 visible = false
@@ -398,10 +470,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 3.0
+offset_left = -21.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(0.48869473, 0.3742521, 0.89014494, 1)
 
 [node name="Label" type="Label" parent="CanvasLayer/ResultScreen" unique_id=1909537762]
 visible = false
@@ -422,7 +494,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-alignment = 1
+alignment = 2
 
 [node name="petition1" type="HBoxContainer" parent="CanvasLayer/ResultScreen/VBoxContainer" unique_id=1244681309]
 layout_mode = 2
@@ -432,9 +504,10 @@ alignment = 1
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/ResultScreen/VBoxContainer/petition1" unique_id=2135903472]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 1
+size_flags_vertical = 4
 
 [node name="cat_slot1" type="TextureRect" parent="CanvasLayer/ResultScreen/VBoxContainer/petition1" unique_id=3313250]
+material = SubResource("ShaderMaterial_snhkh")
 layout_mode = 2
 texture = ExtResource("9_toonf")
 expand_mode = 3
@@ -448,9 +521,10 @@ alignment = 1
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/ResultScreen/VBoxContainer/petition2" unique_id=433631793]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 1
+size_flags_vertical = 4
 
 [node name="cat_slot2" type="TextureRect" parent="CanvasLayer/ResultScreen/VBoxContainer/petition2" unique_id=1055914919]
+material = SubResource("ShaderMaterial_snhkh")
 layout_mode = 2
 texture = ExtResource("9_toonf")
 expand_mode = 3
@@ -464,9 +538,10 @@ alignment = 1
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/ResultScreen/VBoxContainer/petition3" unique_id=1293852620]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 1
+size_flags_vertical = 4
 
 [node name="cat_slot3" type="TextureRect" parent="CanvasLayer/ResultScreen/VBoxContainer/petition3" unique_id=1644051897]
+material = SubResource("ShaderMaterial_snhkh")
 layout_mode = 2
 texture = ExtResource("9_toonf")
 expand_mode = 3

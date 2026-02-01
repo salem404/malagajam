@@ -10,9 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://cww7e2vwy154t" path="res://assets/Prinbles_YetAnotherIcons (beta) (9_7_2023)/svg/White-Icon/Repeat-Right.svg" id="7_am25x"]
 
 [sub_resource type="Gradient" id="Gradient_f4mfi"]
+offsets = PackedFloat32Array(0, 0.9826087)
+colors = PackedColorArray(0.7449832, 0.3633014, 0.78910446, 1, 0.93580663, 0.667182, 0.47418398, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_es4n0"]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gjs24"]
 gradient = SubResource("Gradient_f4mfi")
+fill_from = Vector2(0, 0.24358974)
 fill_to = Vector2(0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_manaa"]
@@ -27,14 +30,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5p8wc")
 
-[node name="Panel" type="TextureRect" parent="." unique_id=953083373]
+[node name="Panel2" type="TextureRect" parent="." unique_id=885525014]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("GradientTexture2D_es4n0")
+texture = SubResource("GradientTexture2D_gjs24")
 
 [node name="AjustesLabel" type="Label" parent="." unique_id=1992692996]
 layout_mode = 1
@@ -65,16 +68,13 @@ tab_0/icon = ExtResource("2_gjs24")
 tab_1/icon = ExtResource("2_gis3k")
 
 [node name="Audio" type="AspectRatioContainer" parent="MarginContainer/TabContainer" unique_id=209815922]
+custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 script = ExtResource("2_6wm04")
 metadata/_tab_index = 0
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/TabContainer/Audio" unique_id=784630103]
 layout_mode = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 0
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 60
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/TabContainer/Audio/MarginContainer" unique_id=230728934]
 layout_mode = 2
@@ -351,6 +351,7 @@ icon = ExtResource("7_am25x")
 
 [node name="ui_language" type="AspectRatioContainer" parent="MarginContainer/TabContainer" unique_id=2035578903]
 visible = false
+custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 script = ExtResource("3_f4mfi")
 metadata/_tab_index = 1

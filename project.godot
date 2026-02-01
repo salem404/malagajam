@@ -21,9 +21,9 @@ buses/default_bus_layout="uid://mgos24linwog"
 
 [autoload]
 
+AudioManager="*uid://bxhu3lxvcx2qd"
 ConfigManager="*uid://2vvqbbre80wg"
 TrozosRegistry="*uid://cg77lypfioher"
-AudioManager="*uid://bxhu3lxvcx2qd"
 
 [display]
 
