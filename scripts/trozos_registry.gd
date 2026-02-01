@@ -301,6 +301,37 @@ var trozos_registry := {
 		"mandibula",
 		{"futurista":1.0},
 		),
+	"miku_cabeza": Trozo.new(
+		14,
+		"cabeza",
+		{"cuqui":1.0},
+		),
+	"cabeza15": Trozo.new(
+		15,
+		"cabeza",
+		{"cuqui":1.0},
+		),
+	"miku_ojos": Trozo.new(
+		14,
+		"ojos",
+		{"cuqui":1.0},
+		),
+	"miku_mandibula": Trozo.new(
+		14,
+		"mandibula",
+		{"cuqui":0.5,"futurista":0.5},
+		),
+	"mandibula15": Trozo.new(
+		15,
+		"mandibula",
+		{"futurista":0.5,"macabro":0.5},
+		),
+	"cabeza16": Trozo.new(
+		16,
+		"cabeza",
+		{"futurista":0.5,"macabro":0.5},
+		),
+	
 }
 
 
