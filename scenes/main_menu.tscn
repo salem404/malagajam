@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cx6oru1mgwafe" path="res://scripts/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="FontFile" uid="uid://dmj3ty36b6e5c" path="res://assets/fonts/Rainbow2000_Font_v1_04/Rainbow2000-Bold.ttf" id="2_ekxnf"]
+[ext_resource type="Shader" uid="uid://bmrnjspjnxqab" path="res://shaders/wiggle.gdshader" id="3_wu84c"]
+[ext_resource type="Texture2D" uid="uid://vxxne20da45s" path="res://assets/us.png" id="4_8ln24"]
+[ext_resource type="FontFile" uid="uid://dq40upi2tepfc" path="res://assets/fonts/friendlyscribbles/friendlyscribbles.ttf" id="5_8ln24"]
 
 [sub_resource type="Gradient" id="Gradient_f4mfi"]
 offsets = PackedFloat32Array(0, 0.9826087)
@@ -12,8 +15,21 @@ gradient = SubResource("Gradient_f4mfi")
 fill_from = Vector2(0, 0.24358974)
 fill_to = Vector2(0, 1)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rtw2f"]
+shader = ExtResource("3_wu84c")
+shader_parameter/interval = 0.5
+shader_parameter/timeDelay = 0.0
+shader_parameter/intensityX = 1.0
+shader_parameter/intensityY = 10.0
+shader_parameter/seed = 76.0
+
 [sub_resource type="Theme" id="Theme_ekxnf"]
 Button/font_sizes/font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_rtw2f"]
+font = ExtResource("5_8ln24")
+font_size = 17
+font_color = Color(0, 0, 0, 1)
 
 [node name="MainMenu" type="Control" unique_id=271016215]
 layout_mode = 3
@@ -50,6 +66,12 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=467611094]
+material = SubResource("ShaderMaterial_rtw2f")
+position = Vector2(732, 513)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("4_8ln24")
+
 [node name="MarginContainer" type="AspectRatioContainer" parent="." unique_id=171809941]
 layout_mode = 1
 anchors_preset = 9
@@ -77,6 +99,33 @@ expand_icon = true
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=806141854]
 autoplay = true
 bus = &"Music"
+
+[node name="Label" type="Label" parent="." unique_id=856470134]
+layout_mode = 0
+offset_left = 531.0
+offset_top = 433.0
+offset_right = 718.0
+offset_bottom = 456.0
+text = "Cristina Morgado Núñez"
+label_settings = SubResource("LabelSettings_rtw2f")
+
+[node name="Label2" type="Label" parent="." unique_id=389563515]
+layout_mode = 0
+offset_left = 641.0
+offset_top = 403.0
+offset_right = 833.0
+offset_bottom = 426.0
+text = "Lola Cáceres Fernández"
+label_settings = SubResource("LabelSettings_rtw2f")
+
+[node name="Label3" type="Label" parent="." unique_id=710247018]
+layout_mode = 0
+offset_left = 750.0
+offset_top = 434.0
+offset_right = 937.0
+offset_bottom = 457.0
+text = "Paula Rumeu Romero"
+label_settings = SubResource("LabelSettings_rtw2f")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
