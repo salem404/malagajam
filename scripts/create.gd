@@ -60,14 +60,14 @@ func change_to_result_mode() -> void:
 
 func reset_game() -> void:
 	game_status = "Petition"
+	var current_petition :Array = petitions_manager.generate_petition()
 	%ResultScreen.hide()
 	%PetitionScreen.show()
+	show_petition(current_petition)
 	%NextButton.text = tr("ui_next")
 	%ColorPickers.show()
 	# Reset all trozo attachments
-	var trozo_attachments: Array = get_tree().get_nodes_in_group("trozo_attach
-")
-	for trozo_attach in trozo_attachments:
-		var ta: TrozoAttach = trozo_attach
-		ta.texture = null
-		ta.visible = false
+	var trozo_attaches: Array = get_tree().get_nodes_in_group("trozo_attach")
+	for trozo_attach in trozo_attaches:
+		trozo_attach.texture = null
+		trozo_attach.visible = false
