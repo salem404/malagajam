@@ -93,11 +93,6 @@ texture = ExtResource("4_snhkh")
 script = ExtResource("4_hrf6i")
 metadata/_custom_type_script = "uid://sw4qwwf46q6f"
 
-[node name="AttachExtras" type="Sprite2D" parent="Control/Preview/AspectRatioContainer/Mask/Model" unique_id=48741904]
-use_parent_material = true
-script = ExtResource("4_hrf6i")
-metadata/_custom_type_script = "uid://sw4qwwf46q6f"
-
 [node name="AttachCabeza" type="Sprite2D" parent="Control/Preview/AspectRatioContainer/Mask/Model" unique_id=406181218]
 use_parent_material = true
 script = ExtResource("4_hrf6i")
@@ -155,8 +150,6 @@ tab_2/title = "ui_eyes"
 tab_2/icon = ExtResource("7_xcug1")
 tab_3/title = "ui_jaw"
 tab_3/icon = ExtResource("8_qe2hf")
-tab_4/disabled = true
-tab_4/hidden = true
 
 [node name="ShapeTab" type="ScrollContainer" parent="Control/Preview/Customize/ItemList" unique_id=788981250]
 layout_mode = 2
@@ -241,34 +234,17 @@ theme_override_constants/v_separation = 20
 alignment = 1
 last_wrap_alignment = 1
 
-[node name="ExtrasTab" type="ScrollContainer" parent="Control/Preview/Customize/ItemList" unique_id=515249951]
-visible = false
-layout_mode = 2
-metadata/_tab_index = 4
-
-[node name="MarginContainer" type="MarginContainer" parent="Control/Preview/Customize/ItemList/ExtrasTab" unique_id=1960943464]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/margin_top = 25
-theme_override_constants/margin_bottom = 25
-
-[node name="Extras" type="FlowContainer" parent="Control/Preview/Customize/ItemList/ExtrasTab/MarginContainer" unique_id=117666931]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/h_separation = 35
-theme_override_constants/v_separation = 20
-alignment = 1
-last_wrap_alignment = 1
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1636311401]
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer" unique_id=1493944895]
 custom_minimum_size = Vector2(0, 50)
-offset_top = 490.0
-offset_right = 960.0
-offset_bottom = 540.0
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -37.0
+grow_horizontal = 2
+grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_ee4bf")
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/PanelContainer" unique_id=1306029837]
@@ -388,17 +364,6 @@ position = Vector2(-15.9999695, 1)
 scale = Vector2(0.59375, 0.59375)
 texture = ExtResource("8_qe2hf")
 centered = false
-
-[node name="extras" type="ColorPickerButton" parent="CanvasLayer/ColorPickers" unique_id=767976752]
-visible = false
-custom_minimum_size = Vector2(40, 40)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-color = Color(1, 1, 1, 1)
-edit_alpha = false
-script = ExtResource("9_b0hbb")
-metadata/_custom_type_script = "uid://dqe8kefwtf0y3"
 
 [node name="PetitionScreen" type="Control" parent="CanvasLayer" unique_id=1167329772]
 unique_name_in_owner = true

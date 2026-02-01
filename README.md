@@ -1,11 +1,16 @@
 <div align="center">
   
-  <h1 align="center">Málaga Jam XX</h1>
+  <h1 align="center">ArtMask Gadir</h1>
 
 </div>
 
+## Descripción
+
+> Proyecto desarrollado para la [Málaga Jam XX](https://itch.io/jam/malagajam-weekend-20)
+
 ## Índice
 
+- [Descripción](#descripción)
 - [Índice](#índice)
 - [Licencia](#licencia)
 - [Licencias adicionales](#licencias-adicionales)
