@@ -22,6 +22,7 @@ Este proyecto utiliza recursos de terceros cuyas licencias se pueden encontrar e
 - Godot Engine - [Licencia](https://godotengine.org/license)
 - Rainbow 2000 Font por GGBot.net- [Enlace](https://ggbot.itch.io/rainbow-2000-font)
 - YetAnotherIcons por Prinbles - [Enlace](https://prinbles.itch.io/yet-another-icons)
+- Audio de Pixabay - [Licencia](https://pixabay.com/service/license-summary/)
 
 ## Herramientas
 

@@ -32,6 +32,7 @@ grow_vertical = 2
 script = ExtResource("1_b0i6l")
 
 [node name="Control" type="Control" parent="." unique_id=2123502083]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 
@@ -52,18 +53,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_62e2m")
 
 [node name="Mask" type="Control" parent="Control/Preview/AspectRatioContainer" unique_id=1823585992]
 layout_mode = 2
-
-[node name="Label" type="Label" parent="Control/Preview/AspectRatioContainer/Mask" unique_id=477002135]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -53.0
-offset_top = 35.0
-offset_right = 53.0
-offset_bottom = 58.0
-grow_horizontal = 2
-text = "Una de queso porfa"
 
 [node name="Model" type="Node2D" parent="Control/Preview/AspectRatioContainer/Mask" unique_id=1802959183]
 unique_name_in_owner = true
@@ -215,55 +204,58 @@ theme_override_constants/v_separation = 20
 alignment = 1
 last_wrap_alignment = 1
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1493944895]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1636311401]
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer" unique_id=1493944895]
 custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
+offset_top = 490.0
+offset_right = 960.0
+offset_bottom = 540.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_ee4bf")
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="PanelContainer" unique_id=1306029837]
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/PanelContainer" unique_id=1306029837]
 layout_mode = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/HBoxContainer3" unique_id=2103164927]
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/PanelContainer/HBoxContainer3" unique_id=2103164927]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="MenuButton" type="Button" parent="PanelContainer/HBoxContainer3/HBoxContainer2" unique_id=2113994584]
+[node name="MenuButton" type="Button" parent="CanvasLayer/PanelContainer/HBoxContainer3/HBoxContainer2" unique_id=2113994584]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "ui_main_menu"
 icon = ExtResource("9_t7pq5")
 
-[node name="SettingsButton" type="Button" parent="PanelContainer/HBoxContainer3/HBoxContainer2" unique_id=70433581]
+[node name="SettingsButton" type="Button" parent="CanvasLayer/PanelContainer/HBoxContainer3/HBoxContainer2" unique_id=70433581]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "ui_settings"
 icon = ExtResource("10_snhkh")
 
-[node name="NextButton" type="Button" parent="PanelContainer/HBoxContainer3" unique_id=780538727]
+[node name="NextButton" type="Button" parent="CanvasLayer/PanelContainer/HBoxContainer3" unique_id=780538727]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "ui_finish"
+text = "ui_next"
 icon = ExtResource("11_xcug1")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1636311401]
 
 [node name="ColorPickers" type="VBoxContainer" parent="CanvasLayer" unique_id=655954926]
 unique_name_in_owner = true
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
+anchor_bottom = 0.5
 offset_left = -20.0
-offset_top = -223.0
+offset_top = -86.0
 offset_right = 20.0
+offset_bottom = 86.0
 grow_horizontal = 2
-grow_vertical = 0
-size_flags_horizontal = 3
+grow_vertical = 2
 
 [node name="shape" type="ColorPickerButton" parent="CanvasLayer/ColorPickers" unique_id=1663139051]
 custom_minimum_size = Vector2(40, 40)
@@ -314,9 +306,73 @@ edit_alpha = false
 script = ExtResource("9_b0hbb")
 metadata/_custom_type_script = "uid://dqe8kefwtf0y3"
 
+[node name="PetitionScreen" type="Control" parent="CanvasLayer" unique_id=1167329772]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/PetitionScreen" unique_id=382476932]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/PetitionScreen" unique_id=1282361349]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "PETICIOn"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResultScreen" type="Control" parent="CanvasLayer" unique_id=1470676073]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 478.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/ResultScreen" unique_id=1480535751]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/ResultScreen" unique_id=1909537762]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "RESULTADO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Settings" parent="CanvasLayer" unique_id=1520513264 instance=ExtResource("10_toonf")]
 unique_name_in_owner = true
 visible = false
 
-[connection signal="pressed" from="PanelContainer/HBoxContainer3/HBoxContainer2/MenuButton" to="." method="_on_exit_button_pressed"]
-[connection signal="pressed" from="PanelContainer/HBoxContainer3/HBoxContainer2/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/HBoxContainer3/HBoxContainer2/MenuButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/HBoxContainer3/HBoxContainer2/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/HBoxContainer3/NextButton" to="." method="_on_next_button_pressed"]
