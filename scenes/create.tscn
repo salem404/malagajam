@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bov6s5346kxer" path="res://assets/trozos/shape/1.png" id="4_snhkh"]
 [ext_resource type="Script" uid="uid://dqe8kefwtf0y3" path="res://components/trozo_color_picker.gd" id="9_b0hbb"]
 [ext_resource type="Texture2D" uid="uid://kxhqvxriq87v" path="res://assets/Prinbles_YetAnotherIcons (beta) (9_7_2023)/svg/White-Icon/Home.svg" id="9_t7pq5"]
+[ext_resource type="Texture2D" uid="uid://bfghv7pbbdk6d" path="res://assets/Cuqui.png" id="9_toonf"]
 [ext_resource type="Texture2D" uid="uid://bsu16p4k2di5d" path="res://assets/Prinbles_YetAnotherIcons (beta) (9_7_2023)/svg/White-Icon/Gear.svg" id="10_snhkh"]
 [ext_resource type="PackedScene" uid="uid://d3i3qli7l3int" path="res://scenes/settings.tscn" id="10_toonf"]
 [ext_resource type="Texture2D" uid="uid://dnmsyg6ytdisu" path="res://assets/Prinbles_YetAnotherIcons (beta) (9_7_2023)/svg/White-Icon/Tick.svg" id="11_xcug1"]
@@ -84,6 +85,27 @@ metadata/_custom_type_script = "uid://sw4qwwf46q6f"
 use_parent_material = true
 script = ExtResource("4_hrf6i")
 metadata/_custom_type_script = "uid://sw4qwwf46q6f"
+
+[node name="petition" type="HBoxContainer" parent="Control/Preview/AspectRatioContainer/Mask" unique_id=2146367183]
+layout_mode = 0
+offset_right = 479.0
+offset_bottom = 79.0
+alignment = 1
+
+[node name="cat_slot1" type="TextureRect" parent="Control/Preview/AspectRatioContainer/Mask/petition" unique_id=983862236]
+layout_mode = 2
+texture = ExtResource("9_toonf")
+expand_mode = 2
+
+[node name="cat_slot2" type="TextureRect" parent="Control/Preview/AspectRatioContainer/Mask/petition" unique_id=858545972]
+layout_mode = 2
+texture = ExtResource("9_toonf")
+expand_mode = 2
+
+[node name="cat_slot3" type="TextureRect" parent="Control/Preview/AspectRatioContainer/Mask/petition" unique_id=1499569591]
+layout_mode = 2
+texture = ExtResource("9_toonf")
+expand_mode = 2
 
 [node name="Customize" type="PanelContainer" parent="Control/Preview" unique_id=1751635438]
 layout_mode = 2
@@ -308,6 +330,7 @@ metadata/_custom_type_script = "uid://dqe8kefwtf0y3"
 
 [node name="PetitionScreen" type="Control" parent="CanvasLayer" unique_id=1167329772]
 unique_name_in_owner = true
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -326,6 +349,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="CanvasLayer/PetitionScreen" unique_id=1282361349]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -336,9 +360,30 @@ text = "PETICIOn"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="petition" type="HBoxContainer" parent="CanvasLayer/PetitionScreen" unique_id=673992936]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="cat_slot1" type="TextureRect" parent="CanvasLayer/PetitionScreen/petition" unique_id=2016377975]
+layout_mode = 2
+texture = ExtResource("9_toonf")
+
+[node name="cat_slot2" type="TextureRect" parent="CanvasLayer/PetitionScreen/petition" unique_id=1689744214]
+layout_mode = 2
+texture = ExtResource("9_toonf")
+
+[node name="cat_slot3" type="TextureRect" parent="CanvasLayer/PetitionScreen/petition" unique_id=1222258371]
+layout_mode = 2
+texture = ExtResource("9_toonf")
+
 [node name="ResultScreen" type="Control" parent="CanvasLayer" unique_id=1470676073]
 unique_name_in_owner = true
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -359,6 +404,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="CanvasLayer/ResultScreen" unique_id=1909537762]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -368,6 +414,63 @@ grow_vertical = 2
 text = "RESULTADO"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ResultScreen" unique_id=2063963635]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="petition1" type="HBoxContainer" parent="CanvasLayer/ResultScreen/VBoxContainer" unique_id=1244681309]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/ResultScreen/VBoxContainer/petition1" unique_id=2135903472]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="cat_slot1" type="TextureRect" parent="CanvasLayer/ResultScreen/VBoxContainer/petition1" unique_id=3313250]
+layout_mode = 2
+texture = ExtResource("9_toonf")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="petition2" type="HBoxContainer" parent="CanvasLayer/ResultScreen/VBoxContainer" unique_id=263972410]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/ResultScreen/VBoxContainer/petition2" unique_id=433631793]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="cat_slot2" type="TextureRect" parent="CanvasLayer/ResultScreen/VBoxContainer/petition2" unique_id=1055914919]
+layout_mode = 2
+texture = ExtResource("9_toonf")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="petition3" type="HBoxContainer" parent="CanvasLayer/ResultScreen/VBoxContainer" unique_id=192710921]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/ResultScreen/VBoxContainer/petition3" unique_id=1293852620]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="cat_slot3" type="TextureRect" parent="CanvasLayer/ResultScreen/VBoxContainer/petition3" unique_id=1644051897]
+layout_mode = 2
+texture = ExtResource("9_toonf")
+expand_mode = 3
+stretch_mode = 5
 
 [node name="Settings" parent="CanvasLayer" unique_id=1520513264 instance=ExtResource("10_toonf")]
 unique_name_in_owner = true
