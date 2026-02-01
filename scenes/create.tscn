@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dnmsyg6ytdisu" path="res://assets/Prinbles_YetAnotherIcons (beta) (9_7_2023)/svg/White-Icon/Tick.svg" id="11_xcug1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62e2m"]
-bg_color = Color(0.9384615, 0.36711675, 0.59112024, 1)
+bg_color = Color(0.9388298, 0.67120755, 0.4815184, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t7pq5"]
 shader = ExtResource("2_b0hbb")
@@ -21,7 +21,14 @@ shader_parameter/intensityX = 0.0
 shader_parameter/intensityY = 2.0
 shader_parameter/seed = 2002.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b0hbb"]
+bg_color = Color(0.74509805, 0.3647059, 0.7882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_toonf"]
+bg_color = Color(0.83244205, 0.519163, 0.86619705, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ee4bf"]
+bg_color = Color(0.7436546, 0.38700503, 0.6424372, 1)
 
 [node name="Create" type="VBoxContainer" unique_id=1630423358]
 anchors_preset = 15
@@ -88,10 +95,12 @@ metadata/_custom_type_script = "uid://sw4qwwf46q6f"
 [node name="Customize" type="PanelContainer" parent="Control/Preview" unique_id=1751635438]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_b0hbb")
 
 [node name="ItemList" type="TabContainer" parent="Control/Preview/Customize" unique_id=55624008]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_toonf")
 current_tab = 0
 tab_0/title = "ui_shape"
 tab_1/title = "ui_head"
