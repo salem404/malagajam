@@ -4,6 +4,8 @@ extends VBoxContainer
 @onready var item_list = %ItemList
 @onready var petitions_manager = PetitionsManager.new()
 
+@onready var create_scene_petition = $Control/Preview/AspectRatioContainer/Mask/petition
+
 @export var game_status := "Petition"
 var current_petition: Array
 
@@ -27,8 +29,8 @@ func _on_exit_button_pressed() -> void:
 
 func poblate_containers() -> void:
 	var trozos_dict: Dictionary = TrozosRegistry.get_all_trozos()
-	for trozo in trozos_dict.values():	
-		var category_container:= item_list.get_node("%sTab/MarginContainer/%s" % [trozo.category.capitalize(), trozo.category.capitalize()])
+	for trozo in trozos_dict.values():
+		var category_container := item_list.get_node("%sTab/MarginContainer/%s" % [trozo.category.capitalize(), trozo.category.capitalize()])
 		if category_container != null:
 			var trozo_button: TrozoButton = TrozoButton.new()
 			trozo_button.trozo_id = trozo.id
@@ -59,18 +61,25 @@ func _on_next_button_pressed() -> void:
 func change_to_create_mode() -> void:
 	game_status = "Create"
 	%PetitionScreen.hide()
+	create_scene_petition.show()
 	show_petition(petitions_manager.current_petition, %Control.get_node("Preview/AspectRatioContainer/Mask"))
 	%NextButton.text = tr("ui_finish")
 
 func change_to_result_mode() -> void:
 	game_status = "Result"
+	create_scene_petition.hide()
 	%ResultScreen.show()
 	%ColorPickers.hide()
 	%NextButton.text = tr("ui_restart")
+	
+	for i in current_petition.size():
+		var petition_texture = "res://assets/%s.png" % current_petition[i].capitalize()
+		var result_slot = %ResultScreen.get_node("VBoxContainer/petition%d/cat_slot%d" % [i + 1, i + 1])
+		result_slot.texture = load(petition_texture)
 
 func reset_game() -> void:
 	game_status = "Petition"
-	var current_petition :Array = petitions_manager.generate_petition()
+	current_petition = petitions_manager.generate_petition()
 	%ResultScreen.hide()
 	%PetitionScreen.show()
 	show_petition(current_petition, %PetitionScreen)
