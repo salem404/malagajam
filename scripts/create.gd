@@ -71,3 +71,7 @@ func reset_game() -> void:
 	for trozo_attach in trozo_attaches:
 		trozo_attach.texture = null
 		trozo_attach.visible = false
+	# Reset all trozo color pickers
+	var trozo_color_pickers: Array = %ColorPickers.get_children()
+	for trozo_color_picker in trozo_color_pickers:
+		trozo_color_picker.color = Color.WHITE

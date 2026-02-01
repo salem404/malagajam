@@ -4,6 +4,10 @@
 [ext_resource type="Shader" uid="uid://bmrnjspjnxqab" path="res://shaders/wiggle.gdshader" id="2_b0hbb"]
 [ext_resource type="Script" uid="uid://sw4qwwf46q6f" path="res://components/trozo_attach.gd" id="4_hrf6i"]
 [ext_resource type="Texture2D" uid="uid://bov6s5346kxer" path="res://assets/trozos/shape/1.png" id="4_snhkh"]
+[ext_resource type="Texture2D" uid="uid://bunkn6xv4ne5u" path="res://assets/ui/Icon.png" id="5_t7pq5"]
+[ext_resource type="Texture2D" uid="uid://blc8wmkwlmf6j" path="res://assets/ui/Icon2.png" id="6_snhkh"]
+[ext_resource type="Texture2D" uid="uid://b6odjhp50yp1m" path="res://assets/ui/Icon3.png" id="7_xcug1"]
+[ext_resource type="Texture2D" uid="uid://x13x8bs2xevy" path="res://assets/ui/Icon4.png" id="8_qe2hf"]
 [ext_resource type="Script" uid="uid://dqe8kefwtf0y3" path="res://components/trozo_color_picker.gd" id="9_b0hbb"]
 [ext_resource type="Texture2D" uid="uid://kxhqvxriq87v" path="res://assets/Prinbles_YetAnotherIcons (beta) (9_7_2023)/svg/White-Icon/Home.svg" id="9_t7pq5"]
 [ext_resource type="Texture2D" uid="uid://bsu16p4k2di5d" path="res://assets/Prinbles_YetAnotherIcons (beta) (9_7_2023)/svg/White-Icon/Gear.svg" id="10_snhkh"]
@@ -103,9 +107,13 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_toonf")
 current_tab = 0
 tab_0/title = "ui_shape"
+tab_0/icon = ExtResource("5_t7pq5")
 tab_1/title = "ui_head"
+tab_1/icon = ExtResource("6_snhkh")
 tab_2/title = "ui_eyes"
+tab_2/icon = ExtResource("7_xcug1")
 tab_3/title = "ui_jaw"
+tab_3/icon = ExtResource("8_qe2hf")
 tab_4/disabled = true
 tab_4/hidden = true
 
@@ -267,42 +275,78 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="shape" type="ColorPickerButton" parent="CanvasLayer/ColorPickers" unique_id=1663139051]
+clip_children = 2
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
+icon = ExtResource("5_t7pq5")
 color = Color(1, 1, 1, 1)
 edit_alpha = false
 script = ExtResource("9_b0hbb")
 metadata/_custom_type_script = "uid://dqe8kefwtf0y3"
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ColorPickers/shape" unique_id=1430484287]
+self_modulate = Color(0.83137256, 0.5176471, 0.8666667, 1)
+position = Vector2(-17, 0)
+scale = Vector2(0.59375, 0.59375)
+texture = ExtResource("5_t7pq5")
+centered = false
 
 [node name="cabeza" type="ColorPickerButton" parent="CanvasLayer/ColorPickers" unique_id=1610458723]
+clip_children = 2
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+icon = ExtResource("6_snhkh")
 color = Color(1, 1, 1, 1)
 edit_alpha = false
 script = ExtResource("9_b0hbb")
 metadata/_custom_type_script = "uid://dqe8kefwtf0y3"
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/ColorPickers/cabeza" unique_id=2006403303]
+self_modulate = Color(0.83137256, 0.5176471, 0.8666667, 1)
+position = Vector2(-15.9999695, 1.0000153)
+scale = Vector2(0.59375, 0.59375)
+texture = ExtResource("6_snhkh")
+centered = false
 
 [node name="ojos" type="ColorPickerButton" parent="CanvasLayer/ColorPickers" unique_id=1168095431]
+clip_children = 2
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+icon = ExtResource("7_xcug1")
 color = Color(1, 1, 1, 1)
 edit_alpha = false
 script = ExtResource("9_b0hbb")
 metadata/_custom_type_script = "uid://dqe8kefwtf0y3"
 
+[node name="Sprite2D3" type="Sprite2D" parent="CanvasLayer/ColorPickers/ojos" unique_id=124986292]
+self_modulate = Color(0.83137256, 0.5176471, 0.8666667, 1)
+position = Vector2(-15.9999695, 1)
+scale = Vector2(0.59375, 0.59375)
+texture = ExtResource("7_xcug1")
+centered = false
+
 [node name="mandibula" type="ColorPickerButton" parent="CanvasLayer/ColorPickers" unique_id=1337083917]
+clip_children = 2
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+icon = ExtResource("8_qe2hf")
 color = Color(1, 1, 1, 1)
 edit_alpha = false
 script = ExtResource("9_b0hbb")
 metadata/_custom_type_script = "uid://dqe8kefwtf0y3"
+
+[node name="Sprite2D4" type="Sprite2D" parent="CanvasLayer/ColorPickers/mandibula" unique_id=139495277]
+self_modulate = Color(0.83137256, 0.5176471, 0.8666667, 1)
+position = Vector2(-15.9999695, 1)
+scale = Vector2(0.59375, 0.59375)
+texture = ExtResource("8_qe2hf")
+centered = false
 
 [node name="extras" type="ColorPickerButton" parent="CanvasLayer/ColorPickers" unique_id=767976752]
 visible = false
@@ -317,6 +361,7 @@ metadata/_custom_type_script = "uid://dqe8kefwtf0y3"
 
 [node name="PetitionScreen" type="Control" parent="CanvasLayer" unique_id=1167329772]
 unique_name_in_owner = true
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

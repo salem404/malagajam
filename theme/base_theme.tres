@@ -4,9 +4,10 @@
 Button/constants/h_separation = 4
 Button/constants/icon_max_width = 22
 Button/font_sizes/font_size = 25
+ColorPickerButton/styles/normal = null
 MarginContainer/constants/margin_bottom = 20
 MarginContainer/constants/margin_left = 20
 MarginContainer/constants/margin_right = 20
 MarginContainer/constants/margin_top = 20
 TabContainer/constants/icon_max_width = 30
-TabContainer/font_sizes/font_size = 30
+TabContainer/font_sizes/font_size = 19
